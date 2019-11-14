@@ -1,0 +1,250 @@
+/* Left Menu styles */
+#menuLeft {
+  min-width: 365px !important;
+  max-width: 650px !important;
+  border-right: 1px solid #DDDDDD;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+.top-box {
+  padding-top: 12.5px;
+}
+
+.bottom-box {
+  padding-top: 12.5px;
+  border-top: solid 1px lightgray;
+}
+
+.menuflex {
+  height: calc(100% - 35px);
+  display: flex;
+  flex-direction: column;
+}
+
+.menuflex .pretty .state label,
+.menuflex #victim_infos label,
+.menuflex #clues_header label,
+.tree-title > label  {
+  text-indent: 10px;
+}
+
+.menuflex hr {
+  margin: 0.5rem 0;
+}
+
+#victim_infos {
+  cursor: pointer;
+}
+
+#victim_infos > .fa::before {
+  padding: 10px;
+}
+
+#victim_infos label {
+  cursor: pointer;
+}
+
+/* Styles for Initial Search Area section */
+.isa_set, .isa_unset {
+  cursor: pointer;
+  font-style: italic;
+  font-size: 0.8em;
+  margin: 2px auto 6px auto;
+}
+/*
+#use_current_bbox, .isa_unset {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin: 2px auto 6px auto;
+}
+#delete_current_zone, .isa_set {
+  cursor: pointer;
+  font-style: italic;
+  font-size: 0.8em;
+  margin: 2px auto 6px auto;
+}
+*/
+.state > .fa-check-circle {
+  color: #0bc81b !important;
+  font-size: 1em;
+}
+.state > .fa-times-circle {
+  color: #d22374 !important;
+  font-size: 1em;
+}
+
+.menu-toogle {
+  pointer-events: none;
+  width: 95%;
+  margin: auto;
+}
+
+.menu-toogle > .state.p-on {
+  width: 100%;
+}
+
+.surface-display {
+  float: right;
+  font-size: 0.9em;
+  font-style: italic;
+}
+/* End of styles for Initial Search Area section */
+
+/* Styles for clue section */
+#clues_zones {
+  margin: 2px 1px 1px 1px;
+  border: solid 1px lightgray;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+#clues_zones > ul.inner_list > li.clue-item {
+  align-items: center;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.85em;
+  padding: 2px;
+}
+
+#clues_zones > ul.inner_list {
+  margin: 0px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+div.clue-content {
+  flex-grow: 1;
+  border-right: solid 1.25px lightgray;
+}
+
+div.clue-content > span.line {
+  display: inline-block;
+}
+
+.pretty.p-switch.switch-belief-clue {
+  padding: 0 5px;
+}
+
+.pretty.p-switch.switch-belief-clue input:checked ~ .state:before {
+    background-color: #d22374 !important;
+}
+/* End of styles for clue section */
+
+/*  Styles for item tree section */
+.tree-title .fa-stack.fa-1x {
+  width: 1em;
+  height: 1.5em;
+  line-height: inherit !important;
+}
+
+.tree-title .fa-filter.fa-stack-1x {
+  transform: scale(0.7);
+  color: #000000;
+  text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -1px white;
+}
+
+.tree-search {
+  text-align: center;
+  padding: 2px 10px 2px 8px;
+}
+
+.tree-search > input {
+  width: 100%;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 0.8em;
+  padding: 1px 3px;
+}
+
+.tree-search > input:focus {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.disabled > .tree-search > input {
+  border: 1px solid gray;
+}
+
+.tree-loader-container {
+  background: #e5e5e5b3;
+  box-shadow: inset 0px 0px 14px 14px white;
+  height: 100%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 99%;
+  z-index: 1001;
+}
+
+.tree-loader {
+  position: relative;
+  top: 25%;
+}
+
+.tree-loader-anim {
+  margin: auto;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.tree-container > ul {
+  list-style: none;
+  padding: 0 0 0 12px;
+}
+
+.tree-container li {
+  cursor: pointer;
+}
+
+.tree-container i {
+  margin-right: 5px;
+}
+
+.tree-container {
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 99%;
+  margin-top: 10px;
+}
+
+.cnode {
+  font-size: 90%;
+  margin: -0.5px !important;
+}
+
+.cnode > .badge {
+  margin-left: 10px;
+}
+
+.end-node {
+  font-size: 85%;
+  margin: -0.5px !important;
+}
+
+li.pnode + ul {
+  padding-left: 30px;
+}
+
+li.cnode + ul {
+  padding-left: 30px;
+}
+/*  End of styles for item tree section */

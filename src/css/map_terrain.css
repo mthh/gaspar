@@ -1,0 +1,38 @@
+img.olTileImage {
+    max-width: none;
+}
+
+.map-container {
+  position: relative;
+  flex: 1 1 70%;
+  flex-flow: row nowrap;
+  display: contents;
+}
+
+.map {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  padding: 1px;
+  height: 0;
+}
+.map.active {
+  height: 100% !important;
+}
+
+#terrain {
+  margin: auto;
+  height: 0;
+  width: 0;
+  padding: 0;
+  opacity: 0;
+}
+#terrain.active {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+#terrain > canvas {
+  display: block
+}

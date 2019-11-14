@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "gaspar-alert.schema.json",
+  "title": "Alerte Choucas [oac#Alerte]",
+  "description": "Concepts de l'Ontologie d'Alerte Choucas (http://purl.org/oac) transformés en jsonschema.",
+  "type": "object",
+  "properties": {
+    "alert_id": {
+      "description": "Identifiant unique attribué à chaque alerte (créé par l'application)",
+      "title": "Alerte ID",
+      "type": "string",
+      "pattern": "^alert_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "victim": {
+      "title": "Victime [oac#a_victime -> oac#Victime]",
+      "description": "C'est la personne perdue dont la localisation est inconnue. Ce n'est pas nécessairement la même personne qui donne l'alerte et qui transmet les indices.",
+      "$ref": "gaspar-victim.schema.json"
+    },
+    "hypotheses": {
+      "title": "Hypothèse(s) de recherche associées à l'alerte [oac#déclenche_hypothèse_recherche -> oac#Hypothèse]",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "gaspar-hypothesis.schema.json"
+      }
+    },
+    "alert_start": {
+      "description": "Désigne le début de l'alerte, lors de l'appel du requérant",
+      "title": "Timestamp du début de l'alerte [oac#a_début]",
+      "type": "string",
+      "format": "date-time"
+    },
+    "alert_end": {
+      "description": "Désigne le fin de l'alerte, lorsque la victime a été localisée.",
+      "title": "Timestamp de la fin de l'alerte  [oac#a_fin]",
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": ["alert_id", "victim", "hypotheses", "alert_start"]
+}

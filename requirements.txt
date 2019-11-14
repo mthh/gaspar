@@ -1,0 +1,10 @@
+aiohttp == 3.6.2
+cchardet == 2.1.1
+geopandas == 0.6.1
+numpy == 1.17.3
+pyproj == 2.4.1
+rasterio == 1.1.0
+rtree == 0.8.3
+shapely >= 1.6.3
+spacy == 2.1.4
+uvloop == 0.14.0

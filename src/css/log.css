@@ -1,0 +1,22 @@
+.container_logging_area {
+  margin: auto;
+}
+
+.menu_logs_title {
+  text-align: center;
+}
+
+.inner_logging_area {
+  background: black;
+  color: white;
+  padding: 5px;
+  overflow-y: scroll;
+}
+
+.menu_logs_radio {
+  display: flex;
+}
+
+.menu_logs_radio > div {
+  margin: auto;
+}

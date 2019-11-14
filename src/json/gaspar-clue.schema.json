@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "choucasdragon-clue.schema.json",
+  "title": "Indice (élément de localisation) [oac#Indice]",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "belief": {
+      "description": "Confiance accordée par la secouriste à l'indice en question. La valeur 0 correspond à une confiance nulle (non-prise en compte de l'indice dans le calcul de la ZLP). La valer 1 correspond à une confiance totale.",
+      "title": "Confiance  [oac#a_confiance -> oac#Confiance]",
+      "type": "number",
+      "multipleOf": 1.0,
+      "minimum": 0,
+      "maximum": 1
+    },
+    "clue_id": {
+      "description": "Identifiant unique de l'indice (créé par l'application)",
+      "title": "Clue ID",
+      "type": "string",
+      "pattern": "^clue_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "clue_natural_language": {
+      "description": "Indice donnée en langue naturelle par le requérant",
+      "title": "Indice en langue naturelle",
+      "type": "string"
+    },
+    "colors": {
+      "description": "Couleur de matérialisation de l'indice dans l'interface",
+      "title": "Couleur",
+      "properties": {
+        "fill": {
+          "type": "string"
+        },
+        "stroke": {
+          "type": "string"
+        }
+      }
+    },
+    "corresponding_zone": {
+      "description": "Zone correspondant à la transformation de l'indice en une Zone de Localisation",
+      "title": "Zone correspondante [oac#a_zone_correspondante]",
+      "type": "object",
+      "properties": {
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "https://geojson.org/schema/Feature.json"
+          }
+        },
+        "type": {
+          "type": "string",
+          "pattern": "^(ZLC|ZLIC)$"
+        }
+      },
+      "required": ["features", "type"]
+    },
+    "instant_or_duration": {
+      "description": "Décrit l'instant ou la durée à laquelle correspond l'indice",
+      "title": "Instant ou durée [oac#a_instant_ou_duree]",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "pattern": "^(instant-now|instant-past|instant-precise|duration-instant-to-now|duration-instant-to-instant|duration-precise)$"
+        },
+        "value": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "spatial_relation_service_options": {
+      "description": "Options relatives au service utilisé pour chaque type de relation spatiale",
+      "title": "Options relatives au service / type de relation spatiale",
+      "type": "object",
+      "properties": {
+        "distance_to_object": {
+          "description": "Distance séparant la victime de l'object (-> Proximite)",
+          "title": "Distance par rapport à l'objet",
+          "type": "number"
+        },
+        "uncertainty": {
+          "description": "Rayon d'incertitude concernant la localisation de la victime (-> Proximité immédiate)",
+          "title": "Rayon d'incertitude",
+          "type": "number"
+        },
+        "distance_maximum": {
+          "description": "Distance au-delà de laquelle ne pas calculer l'intervisibilité (-> Voir)",
+          "title": "Portée maximum",
+          "type": "number"
+        },
+        "type_zone": {
+          "description": "Le type de zone dans laquelle est la victime, parmi ombre ou soleil (-> Ombre / Soleil)",
+          "title": "Type de la zone",
+          "type": "string",
+          "pattern": "^(ombre|soleil)$"
+        }
+      }
+    },
+    "spatial_relation_type": {
+      "description": "Type de relation spatiale décrite par le requérant",
+      "title": "Type de relation spatiale [oac#a_relation_spatiale]",
+      "type": "string",
+      "pattern": "^(Voir|Entendre|Proximité immédiate|Ombre / Soleil)$"
+    },
+    "target": {
+      "description": "",
+      "title": "",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "pattern": "^(ESC|ESR)$"
+        },
+        "category": {
+          "type": "string"
+        },
+        "feature": {
+          "$ref": "https://geojson.org/schema/Feature.json"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "https://geojson.org/schema/Feature.json"
+          }
+        }
+      }
+    },
+    "timestamp": {
+      "description": "Timestamp de saisie de l'indce dans l'application",
+      "title": "Timestamp de saisie [oa#a_timestamp_de_saisie]",
+      "type": "string",
+      "format": "date-time"
+    },
+    "visible": {
+      "description": "Décrit si la zone correspondant à l'indice doit être affichée",
+      "title": "Zone visible",
+      "type": "boolean"
+    },
+    "next_clue": {
+      "description": "Indice suivant",
+      "title": "Indice suivant",
+      "type": "string",
+      "pattern": "^clue_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "previous_clue": {
+      "description": "Indice précédent",
+      "title": "Indice précédent [oac#a_indice_precedent]",
+      "type": "string",
+      "pattern": "^clue_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "concomitant_clue": {
+      "description": "Indice concomitant",
+      "title": "Indice concomitant [oac#a_indice_suivant]",
+      "type": "string",
+      "pattern": "^clue_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    }
+  },
+  "required": [
+    "belief",
+    "clue_id",
+    "clue_natural_language",
+    "colors",
+    "corresponding_zone",
+    "spatial_relation_service_options",
+    "spatial_relation_type",
+    "target",
+    "timestamp",
+    "visible"
+  ]
+}

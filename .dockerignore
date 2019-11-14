@@ -1,0 +1,3 @@
+# To be ignored when copying files to the container
+node_modules
+dist

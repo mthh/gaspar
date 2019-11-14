@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "gaspar-hypothesis.schema.json",
+  "title": "Hypothèse [oac#Hypothèse]",
+  "description": "Une hypothèse de recherche correspond à l'inclusion de tout ou partie des indices afin d'obtenir une Zone de Localisation Probable pour la victime. Plusieurs hypothèses peuvent être mises en oeuvre lors d'une seule alerte.",
+  "type": "object",
+  "properties": {
+    "clues": {
+      "description": "Ensemble des indices pris en compte dans cette hypothèse.",
+      "title": "Indices pris en compte [oac#a_indice -> oac#Indice]",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "choucasdragon-clue.schema.json"
+      }
+    },
+    "itinerary": {
+      "description": "C'est la personne perdue dont la localisation est inconnue. Ce n'est pas nécessairement la même personne qui donne l'alerte et qui transmet les indices.",
+      "title": "Itinéraire [oac#Itinéraire]",
+      "type": "object",
+      "properties": {
+        "waypoints": {
+          "title": "Point de passage de l'itinéraire [oac#a_point_de_passage -> oac#Indice]",
+          "type": "array",
+          "items": {
+            "$ref": "choucasdragon-clue.schema.json"
+          }
+        },
+        "destination": {
+          "type": "string",
+          "title": "Destination de l'itinéraire [oac#a_destination -> string]",
+          "description": "Décrit la destination prévue (mais non atteinte par la victime) d'un itinéraire. Cette destination pourrait être donnée sous la forme d'un point GPS, d'une ES Repère (vers La Mairie de Chamerousse) ou d'ES Candidates (vers une station de ski)."
+        }
+      },
+      "required": ["waypoints"]
+    },
+    "corresponding_ZLP": {
+      "title": "Zone de Localisation Probable correspondante [oac#a_ZLP -> oac#ZL_Probable]",
+      "oneOf": [
+        { "$ref": "https://geojson.org/schema/Geometry.json" },
+        { "type": "null" }
+      ]
+    }
+  },
+  "required": ["clues"]
+}

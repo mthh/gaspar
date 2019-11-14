@@ -1,0 +1,17 @@
+.drawing-tools {
+  margin: auto;
+  height: 180px !important;
+}
+
+.drawing-tools > div {
+  padding: 12.5px;
+}
+
+.drawing-tools button {
+  height: 50px;
+  width: 60px;
+}
+
+.drawing-tools button.btn-cancel-drawing {
+  width: unset !important;
+}

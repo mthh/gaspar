@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "gaspar-ZLP.schema.json",
+  "title": "Zone de Localisation Probable (ZLP / PLA) [oac#ZoneDeLocalisationProbable]",
+  "description": "C'est la zone dans laquelle la victime est susceptible de se trouver, après combinaison des différentes zones de localisation relatives aux différents indices pris en compte.",
+  "type": "object",
+  "properties": {
+    "zlp_id": {
+      "description": "Identifiant unique attribué à la ZLP (créé par l'application)",
+      "title": "ZLP ID",
+      "type": "string",
+      "pattern": "^zlp_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "geometry": {
+      "description": "La géométrie de la Zone de Localisation Probable.",
+      "$ref": "https://geojson.org/schema/Geometry.json"
+    },
+    "clue_ids": {
+      "description": "Les identifiants des indices [oac#Indice] pris en compte pour le calcul de cette ZLP.",
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "pattern": "^clue_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+      }
+    }
+  },
+  "required": ["zlp_id", "geometry", "clue_ids"]
+}

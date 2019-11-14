@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "gaspar-ISA.schema.json",
+  "title": "Zone Initiale de Recherche (ZIR / ISA) [oac#ZoneInitialeDeRecherche]",
+  "description": "C'est la zone qui est garantie de contenir la victime et qui va servir de limite englobante au calcul des Zones de Localisation des indices.",
+  "type": "object",
+  "properties": {
+    "isa_id": {
+      "description": "Identifiant unique attribué à la ZIR (créé par l'application)",
+      "title": "ZIR ID",
+      "type": "string",
+      "pattern": "^isa_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "geometry": {
+      "description": "La géométrie de la Zone Initiale de Recherche.",
+      "$ref": "https://geojson.org/schema/Geometry.json"
+    },
+    "bbox": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "number"
+      }
+    },
+    "name": {
+      "description": "Nom de la zone initiale de recherche (optionel - utilisé pour les instances pré-sélectionnées de ZIR comme celle du massif de Belledonne par exemple)",
+      "type": "string"
+    }
+  },
+  "required": ["isa_id", "geometry"]
+}

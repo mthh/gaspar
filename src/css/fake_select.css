@@ -1,0 +1,57 @@
+.fake-select {
+  display: block;
+}
+
+.fake-select .list, .head {
+  padding: 5px;
+  text-align: center;
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+}
+
+.fake-select .head {
+  height: 40px;
+}
+
+.fake-select .list {
+  display: none !important;
+}
+
+.fake-select .list.active {
+  display: inherit !important;
+  position: absolute;
+  background: white;
+  z-index: 1000;
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.2);
+}
+
+.fake-select > .list > p {
+  margin: 5px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+.fake-select > .list > p:hover {
+  background-color: darkgray;
+}
+
+.fake-select i.fa-caret-down {
+  float: right;
+  top: 0px;
+  position: relative;
+  margin: -4.5px;
+  border: 0.25px solid #c1d1e0;
+  padding: 11px;
+}
+
+.fake-select i.fa-caret-down:hover {
+  background: black;
+  color: white;
+}
+
+.fake-select input[type="number"] {
+  width: 45px;
+  margin-left: 2px;
+}

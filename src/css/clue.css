@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+
+.card-text-target {
+  margin-left: 5px;
+  padding: 10px;
+  border: solid 0.5px grey;
+  display: block;
+}
+
+.active.btn-chcs-cluetype {
+  z-index: 10001;
+  background: white;
+  border-left: 1px solid #C0C0C0;
+  border-right: 1px solid #C0C0C0;
+  box-shadow: none;
+}
+.btn.btn-chcs-cluetype:focus {
+  text-decoration: underline;
+}
+.card-clue .card-body {
+  background: white;
+  border-bottom: 1px solid #C0C0C0;
+  border-left: 1px solid #C0C0C0;
+  border-right: 1px solid #C0C0C0;
+  box-shadow: 1px -1px 6px rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 15px;
+}
+
+.card-clue .card-clue-nl {
+  font-family:'Caveat', cursive;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.card-clue .card-footer {
+  border-top: 2px;
+}
+
+span.card-clue-dist-unit {
+  margin: 0;
+  padding: 7px 0 0 0;
+  text-align: left;
+}
+
+.color_square {
+  width: 22px;
+  height: 22px;
+  margin: auto;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 10%;
+}
+
+.color_circle {
+  width: 22px;
+  height: 22px;
+  margin: auto;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 9px;
+  border-radius: 49%;
+  padding: 5px 0 0 0;
+  text-align: center;
+  color: white;
+}
+
+.color_circle_small {
+  width: 10px;
+  height: 10px;
+  margin: auto auto auto 5px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 9px;
+  border-radius: 49%;
+  border: solid 0.5px rgb(112, 183, 219);
+  padding: 3.5px 0 0 4px;
+  color: white;
+}
+
+.color_hex {
+  height: 22px;
+  vertical-align: middle;
+  width: 60px;
+  font-size: 0.9em;
+}
+
+.rangeSlider__horizontal {
+  height: 10px !important;
+  margin-bottom: 10px;
+}
+
+.rangeSlider__handle {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.rangeSlider__handle__horizontal {
+    top: -5px !important;
+}

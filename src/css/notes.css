@@ -1,0 +1,54 @@
+.note ul {
+  font-size: 18pt;
+  line-height: 90%;
+  margin: 0px;
+  overflow: hidden;
+  padding: 5px 25px;
+  word-wrap: break-word;
+}
+
+.note-inner-content {
+  margin: 5px auto;
+}
+
+.note {
+  background: #ffea44 !important;
+  box-shadow: 1px 2px 2px 0px #aaaaaa;
+  font-size: 22px;
+  line-height: 90%;
+  margin: 0px;
+  overflow: hidden;
+  padding: 1px 5px;
+  user-select: none;
+  word-wrap: break-word;
+  z-index: 10;
+}
+
+.note-title-tab {
+  background: #e8d850 !important;
+}
+
+.note-title-tab.p-mod-current {
+  background: #ffea44 !important;
+}
+
+.note-move-symbol-container {
+  padding: 4px 3px 25px 3px;
+  width: 100%;
+}
+
+.note-move-symbol-container > i.f-right {
+  float: right;
+  font-size: 1rem;
+  padding: 4px;
+}
+
+.note-move-symbol-container > i.f-left {
+  float: left;
+  font-size: 1rem;
+  padding: 4px;
+}
+
+.note-move-symbol-container > i {
+  cursor: pointer;
+}

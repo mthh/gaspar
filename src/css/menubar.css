@@ -1,0 +1,30 @@
+.p-MenuBar {
+    border-bottom: 1px solid #DDDDDD;
+    font: 16px Helvetica, Arial, sans-serif;
+}
+
+.p-MenuBar-item {
+  padding: 6px 10px;
+}
+
+.p-Menu-itemLabel {
+    padding: 6px 35px 6px 2px;
+}
+
+.p-MenuBar-menu {
+  left: 0px !important;
+  width: 100%;
+}
+
+.p-MenuBar-menu > ul {
+  display: inline-flex;
+}
+
+.p-Menu {
+  font: 15px Helvetica, Arial, sans-serif;
+}
+
+.p-Menu-content .fa, .p-Menu-content .fas {
+  font-weight: normal !important;
+  display: table-cell !important;
+}

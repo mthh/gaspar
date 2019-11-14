@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "gaspar-victim.schema.json",
+  "title": "Informations Victime [oac#Victime]",
+  "description": "C'est la personne perdue dont la localisation est inconnue. Ce n'est pas nécessairement la même personne qui donne l'alerte et qui transmet les indices.",
+  "type": "object",
+  "properties": {
+    "victim_id": {
+      "description": "Identifiant unique attribué à la victime (créé par l'application)",
+      "title": "Victime ID",
+      "type": "string",
+      "pattern": "^victim_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "activity": {
+      "description": "Activité pratiquée par la victime.",
+      "title": "Activité pratiquée",
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(Aucune|Ski|VTT|Escalade|Randonnée Pédestre|Canyoning|Spéléologie|Parapente|Autre Activité)$"
+      },
+      "uniqueItems": true
+    },
+    "equipment": {
+      "type": "object",
+      "required": ["worn_clothing", "other_distinctive_features"],
+      "properties": {
+        "worn_clothing": {
+          "title": "Tenue vestimentaire",
+          "type": "string"
+        },
+        "other_distinctive_features": {
+          "title": "Autre(s) élément(s) distinctif(s)",
+          "type": "string"
+        }
+      },
+      "title": "Équipement [oac#Equipement]",
+      "description": "Décrit l'équipement de la victime, en particulier ce qui pourrait permettre de la localiser plus facilement lors du survol de la zone en hélicoptère."
+    },
+    "health_status": {
+      "type": "object",
+      "required": ["infos_current_health", "infos_general_physical_condition", "may_move"],
+      "properties": {
+        "infos_general_physical_condition": {
+          "title": "Condition physique générale",
+          "type": "string"
+        },
+        "infos_current_health": {
+          "title": "Informations spécifiques à l'alerte",
+          "type": "string"
+        },
+        "may_move": {
+          "title": "La victime peut se déplacer ?",
+          "type": "boolean"
+        }
+      },
+      "title": "Santé [oac#EtatDeSanté]",
+      "description": "Permet de décrire l'état de santé de la victime sous plusieurs aspects, notamment pour savoir si elle peut (ou risque de) se déplacer, aussi bien pour lui demander d'affiner des indices qu'elle transmet que lors de sa recherche sur le terrain par les secouristes."
+    },
+    "is_caller": {
+      "title": "La victime est également le requérant ?",
+      "type": "boolean",
+      "description": "Décrit si la victime est également le requérant."
+    }
+  },
+  "required": ["victim_id", "activity", "health_status", "equipment", "is_caller"]
+}
