@@ -1,10 +1,12 @@
+> This repo was archived because it only corresponded to the state of development before the SAGEO'19 conference (current development is done on a private repository hosted by our lab.). See the page https://steamer.imag.fr/?page_id=792 for more information about GASPAR interface or the page https://choucas.ign.fr/ for more information about the CHOUCAS project.
+
 ![GASPAR-Choucas](src/img/gasparlogo.png)
 ## *Geoviz Application for Searching People And Rescuing* - Prototype developed under [CHOUCAS Projet](http://choucas.ign.fr))
 
 > **Geovisualization interface prototype** that exploits the **Choucas Ontology Alert** (Ontologie d'Alerte Choucas - http://purl.org/oac) and whose functionalities aim to support, facilitate and optimize the rescuer's reasoning.  
 
 > Interface prototype and ontology are described in the paper :  
->  *__L’Ontologie d’Alerte Choucas : de la modélisation des connaissances à un outil support d’un raisonnement géovisuel - Application à la recherche de victime en haute-montagne__. Matthieu Viry & Marlène Villanova-Oliver. SAGEO'19 (accepté)*.
+>  *__L’Ontologie d’Alerte Choucas : de la modélisation des connaissances à un outil support d’un raisonnement géovisuel - Application à la recherche de victime en haute-montagne__. Matthieu Viry & Marlène Villanova-Oliver. SAGEO'19. Clermont-Ferrand, France*.
 
 ## Usage
 #### Option 1 - Using Docker
